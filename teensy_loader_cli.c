@@ -35,7 +35,8 @@
 
 void usage(void)
 {
-	fprintf(stderr, "Usage: teensy_loader_cli -mmcu=<MCU> [-w] [-h] [-n] [-v] <file.hex>\n");
+	fprintf(stderr, "Usage: teensy-loader-cli -mmcu=<MCU> [-h] [-w] [-r] [-n] [-v] <file.hex>\n");
+	fprintf(stderr, "\t-h : Print this help message\n");
 	fprintf(stderr, "\t-w : Wait for device to appear\n");
 	fprintf(stderr, "\t-r : Use hard reboot if device not online\n");
 	fprintf(stderr, "\t-n : No reboot after programming\n");
@@ -967,7 +968,9 @@ void parse_options(int argc, char **argv)
 		arg = argv[i];
 		//printf("arg: %s\n", arg);
 		if (*arg == '-') {
-			if (strcmp(arg, "-w") == 0) {
+			if (strcmp(arg, "-h") == 0 || strcmp(arg, "--help") == 0) {
+				usage();
+			} else if (strcmp(arg, "-w") == 0) {
 				wait_for_device_to_appear = 1;
 			} else if (strcmp(arg, "-r") == 0) {
 				hard_reboot_device = 1;
