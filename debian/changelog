@@ -1,3 +1,9 @@
+teensy-loader-cli (2.1-3) unstable; urgency=low
+
+  * Depend on teensy-common
+
+ -- Jaakko Kantojärvi <jaakko@n-1.fi>  Sat, 16 Nov 2013 16:34:32 +0200
+
 teensy-loader-cli (2.1-2) unstable; urgency=low
 
   * Update control file to be more acurate
