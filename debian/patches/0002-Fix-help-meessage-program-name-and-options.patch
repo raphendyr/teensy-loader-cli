@@ -1,0 +1,33 @@
+From: =?UTF-8?q?Jaakko=20Kantoj=C3=A4rvi?= <jaakko@n-1.fi>
+Date: Sun, 17 Nov 2013 00:58:53 +0200
+Subject: Fix help meessage (program name and options)
+
+---
+ teensy_loader_cli.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/teensy_loader_cli.c b/teensy_loader_cli.c
+index 98392c0..0d513b3 100644
+--- a/teensy_loader_cli.c
++++ b/teensy_loader_cli.c
+@@ -35,7 +35,8 @@
+ 
+ void usage(void)
+ {
+-	fprintf(stderr, "Usage: teensy_loader_cli -mmcu=<MCU> [-w] [-h] [-n] [-v] <file.hex>\n");
++	fprintf(stderr, "Usage: teensy-loader-cli -mmcu=<MCU> [-h] [-w] [-r] [-n] [-v] <file.hex>\n");
++	fprintf(stderr, "\t-h : Print this help message\n");
+ 	fprintf(stderr, "\t-w : Wait for device to appear\n");
+ 	fprintf(stderr, "\t-r : Use hard reboot if device not online\n");
+ 	fprintf(stderr, "\t-n : No reboot after programming\n");
+@@ -967,7 +968,9 @@ void parse_options(int argc, char **argv)
+ 		arg = argv[i];
+ 		//printf("arg: %s\n", arg);
+ 		if (*arg == '-') {
+-			if (strcmp(arg, "-w") == 0) {
++			if (strcmp(arg, "-h") == 0 || strcmp(arg, "--help") == 0) {
++				usage();
++			} else if (strcmp(arg, "-w") == 0) {
+ 				wait_for_device_to_appear = 1;
+ 			} else if (strcmp(arg, "-r") == 0) {
+ 				hard_reboot_device = 1;
