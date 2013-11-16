@@ -1,3 +1,5 @@
+include installation.mk
+
 OS ?= LINUX
 #OS ?= WINDOWS
 #OS ?= MACOSX
