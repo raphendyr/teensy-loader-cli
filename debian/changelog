@@ -1,0 +1,5 @@
+teensy-loader-cli (2.1-1) unstable; urgency=low
+
+  * Created debian package of codes available on PJRC website.
+
+ -- Jaakko Kantojärvi <jaakko@n-1.fi>  Sat, 16 Nov 2013 00:12:26 +0200

@@ -1,0 +1,19 @@
+Source: teensy-loader-cli
+Section: unknown
+Priority: optional
+Maintainer: Jaakko Kantojärvi <jaakko@n-1.fi>
+Build-Depends: debhelper (>= 8.0.0), libusb-dev
+Standards-Version: 3.9.4
+Homepage: http://www.pjrc.com/teensy/loader_cli.html
+Vcs-Git: git://github.com/raphendyr/teensy-loader
+Vcs-Browser: http://github.com/raphendyr/teensy-loader
+
+Package: teensy-loader-cli
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Tool foruploading AVR program over HalfKay protocol
+ The Teensy Loader program communicates with your Teensy board
+ when the HalfKay bootloader is running, so you can download
+ new programs and run them.
+ .
+ This package contains the command line version.
