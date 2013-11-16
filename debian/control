@@ -5,8 +5,8 @@ Maintainer: Jaakko Kantojärvi <jaakko@n-1.fi>
 Build-Depends: debhelper (>= 8.0.0), libusb-dev
 Standards-Version: 3.9.4
 Homepage: http://www.pjrc.com/teensy/loader_cli.html
-Vcs-Git: git://github.com/raphendyr/teensy-loader
-Vcs-Browser: http://github.com/raphendyr/teensy-loader
+Vcs-Git: git://github.com/raphendyr/teensy-loader-cli.git
+Vcs-Browser: http://github.com/raphendyr/teensy-loader-cli
 
 Package: teensy-loader-cli
 Architecture: any
