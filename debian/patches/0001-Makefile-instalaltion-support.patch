@@ -1,0 +1,35 @@
+From: =?UTF-8?q?Jaakko=20Kantoj=C3=A4rvi?= <jaakko@n-1.fi>
+Date: Sat, 16 Nov 2013 14:35:03 +0200
+Subject: Makefile instalaltion support
+
+---
+ Makefile        | 2 ++
+ installation.mk | 9 +++++++++
+ 2 files changed, 11 insertions(+)
+ create mode 100644 installation.mk
+
+diff --git a/Makefile b/Makefile
+index 8c041bd..a13baf3 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,3 +1,5 @@
++include installation.mk
++
+ OS ?= LINUX
+ #OS ?= WINDOWS
+ #OS ?= MACOSX
+diff --git a/installation.mk b/installation.mk
+new file mode 100644
+index 0000000..18f4868
+--- /dev/null
++++ b/installation.mk
+@@ -0,0 +1,9 @@
++PREFIX = $(if $(DESTDIR),$(DESTDIR)/usr,$(if $(filter root,$(USER)),/usr/local,$(HOME)/.local))
++BINDIR = $(PREFIX)/bin
++LIBDIR = $(PREFIX)/lib/$(TARGET)
++
++.PHONY: install
++install: teensy_loader_cli
++	install -D -T -m 0755 -o root $< $(BINDIR)/teensy-loader-cli
++
++.DEFAULT_GOAL := teensy_loader_cli
