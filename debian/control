@@ -11,7 +11,9 @@ Vcs-Browser: http://github.com/raphendyr/teensy-loader
 Package: teensy-loader-cli
 Architecture: any
 Depends: teensy-common, ${shlibs:Depends}, ${misc:Depends}, libusb-1.0-0
-Description: Tool foruploading AVR program over HalfKay protocol
+Description: Tool for uploading AVR program over HalfKay protocol
+ Teensy is product from http://www.pjrc.com/teensy/
+ .
  The Teensy Loader program communicates with your Teensy board
  when the HalfKay bootloader is running, so you can download
  new programs and run them.
